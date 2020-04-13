@@ -1,38 +1,41 @@
 package com.example.urlextract.response;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Set;
 
 public class UrlExtractResponse {
 
+    @JsonProperty("total_links")
+    String totalLinks;
 
-    String link;
+    @JsonProperty("total_images")
+    String totalImages;
 
-    String total_links;
+    @JsonProperty("details")
+    private Set<PageVO> pageVOList;
 
-    Map<String , Integer> childs = new HashMap<>();
-
-    public String getLink() {
-        return link;
+    public String getTotalLinks() {
+        return totalLinks;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setTotalLinks(String totalLinks) {
+        this.totalLinks = totalLinks;
     }
 
-    public String getTotal_links() {
-        return total_links;
+    public String getTotalImages() {
+        return totalImages;
     }
 
-    public void setTotal_links(String total_links) {
-        this.total_links = total_links;
+    public void setTotalImages(String totalImages) {
+        this.totalImages = totalImages;
     }
 
-    public Map<String, Integer> getChilds() {
-        return childs;
+    public Set<PageVO> getPageVOList() {
+        return pageVOList;
     }
 
-    public void setChilds(Map<String, Integer> childs) {
-        this.childs = childs;
+    public void setPageVOList(Set<PageVO> pageVOList) {
+        this.pageVOList = pageVOList;
     }
 }
